@@ -19,6 +19,8 @@
   $aussl = ( $hoehe - 2 * $rand ) / 100 * $prozent;
   $bild = imagecreatetruecolor($breite, $hoehe);
   $farbe_hintergrund = imagecolorexact($bild, 255, 255, 255);
+  $lime = imagecolorallocate($bild, 0x00, 0xFF, 0x00);
+  imagecolortransparent($bild, $lime);
   imagefill($bild, 0, 0, $farbe_hintergrund);
   $black = imagecolorallocate($bild, 0,   0,   0);
   $red   = imagecolorallocate($bild, 255,   0,   0);
