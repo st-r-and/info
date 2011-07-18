@@ -18,16 +18,36 @@ if ($lesen = $datab->prepare("SELECT gesammt, gekommen FROM fahrten WHERE id=1")
     $lesen->fetch();
     $lesen->close();
 }
-if (!empty($_POST["eingang"]) || !empty($_POST["abgang"])) {
-if($schr = $datab->prepare("UPDATE prognose SET eingang=?, abgang=? WHERE id=1")) {
-$eing = $_POST["eingang"];
-$abg = $_POST["abgang"];
-$schr->bind_param("ii", $eing, $abg);
-$schr->execute();
-$schr->close();
+if (!empty($_POST["eingang"]) || !empty($_POST["abgang"]) || !empty($_POST["gesammt"]) || !empty($_POST["gekommen"]) || !empty($_POST["vs1"]) || !empty($_POST["vs2"]) || !empty($_POST["vs3"]) || !empty($_POST["vs4"]) || !empty($_POST["vs5"])) {
+  if (!empty($_POST["eingang"]) || !empty($_POST["abgang"])) {
+    if($schr = $datab->prepare("UPDATE prognose SET eingang=?, abgang=? WHERE id=1")) {
+      $eing = $_POST["eingang"];
+      $abg = $_POST["abgang"];
+      $schr->bind_param("ii", $eing, $abg);
+      $schr->execute();
+      $schr->close();
+    }
+  }
+  if(!empty($_POST["gesammt"]) || !empty($_POST["gekommen"])){
+    if($schr = $datab->prepare("UPDATE fahrten SET gesammt=?, gekommen=? WHERE id=1")) {
+      $ges = $_POST["gesammt"];
+      $gek = $_POST["gekommen"];
+      $schr->bind_param("ii", $ges, $gek);
+      $schr->execute();
+      $schr->close();
+      }
+  }
+  if (!empty($_POST["vs1"]) || !empty($_POST["vs2"]) || !empty($_POST["vs3"]) || !empty($_POST["vs4"]) || !empty($_POST["vs5"])){
+    if($schr = $datab->prepare("UPDATE stoerung SET vs1=?, vs2=?, vs3=?, vs4=?; vs5=? WHERE id=1")) {
+      $vs1 = $_POST["vs1"];
+      $vs2 = $_POST["vs2"];
+      $vs3 = $_POST["vs3"];
+      $vs4 = $_POST["vs4"];
+      $vs5 = $_POST["vs5"];
+      $schr->bind_param();
+    }
+  }
 header("Location: back.php");
-
-}
 } else {
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
@@ -99,23 +119,23 @@ function time() {
 <div id="sto">
 <h2>Vorsorterstoerung</h2>
 <div id="vs1"><h3>VS1</h3>
-<input type="text" name="gesammt" value="<?php echo htmlspecialchars($vs1) ?>" />
+<input type="text" name="vs1" value="<?php echo htmlspecialchars($vs1) ?>" />
 <?php echo "<h1>" . htmlspecialchars($vs1) . "</h1>\n"; ?>
 </div>
 <div id="vs2"><h3>VS2</h3>
-<input type="text" name="gesammt" value="<?php echo htmlspecialchars($vs2) ?>" />
+<input type="text" name="vs2" value="<?php echo htmlspecialchars($vs2) ?>" />
 <?php echo "<h1>" . htmlspecialchars($vs2) . "</h1>\n"; ?>
 </div>
 <div id="vs3"><h3>VS3</h3>
-<input type="text" name="gesammt" value="<?php echo htmlspecialchars($vs3) ?>" />
+<input type="text" name="vs3" value="<?php echo htmlspecialchars($vs3) ?>" />
 <?php echo "<h1>" . htmlspecialchars($vs3) . "</h1>\n"; ?>
 </div>
 <div id="vs4"><h3>VS4</h3>
-<input type="text" name="gesammt" value="<?php echo htmlspecialchars($vs4) ?>" />
+<input type="text" name="vs4" value="<?php echo htmlspecialchars($vs4) ?>" />
 <?php echo "<h1>" . htmlspecialchars($vs4) . "</h1>\n"; ?>
 </div>
 <div id="vs5"><h3>VS5</h3>
-<input type="text" name="gesammt" value="<?php echo htmlspecialchars($vs5) ?>" />
+<input type="text" name="vs5" value="<?php echo htmlspecialchars($vs5) ?>" />
 <?php echo "<h1>" . htmlspecialchars($vs5) . "</h1>\n"; ?>
 <input type="submit" />
 
