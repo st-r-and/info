@@ -38,16 +38,20 @@ if (!empty($_POST["eingang"]) || !empty($_POST["abgang"]) || !empty($_POST["gesa
       }
   }
   if (!empty($_POST["vs1"]) || !empty($_POST["vs2"]) || !empty($_POST["vs3"]) || !empty($_POST["vs4"]) || !empty($_POST["vs5"])){
-    if($schr = $datab->prepare("UPDATE stoerung SET vs1=?, vs2=?, vs3=?, vs4=?; vs5=? WHERE id=1")) {
-      $vs1 = $_POST["vs1"];
-      $vs2 = $_POST["vs2"];
-      $vs3 = $_POST["vs3"];
-      $vs4 = $_POST["vs4"];
-      $vs5 = $_POST["vs5"];
-      $schr->bind_param();
-    }
-  }
+    if($schr = $datab->prepare("UPDATE stoerung SET vs1=?, vs2=?, vs3=?, vs4=?, vs5=? WHERE id=1")) {
+      $vs01 = $_POST["vs1"];
+      $vs02 = $_POST["vs2"];
+      $vs03 = $_POST["vs3"];
+      $vs04 = $_POST["vs4"];
+      $vs05 = $_POST["vs5"];
+      $schr->bind_param("iiiii", $vs01, $vs02, $vs03, $vs04, $vs05);
+      $schr->execute();
+      $schr->close();
 header("Location: back.php");
+    }
+
+  }
+
 } else {
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
