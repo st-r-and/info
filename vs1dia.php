@@ -13,12 +13,12 @@
   if($vs4 > $max) $max = $vs4;
   if($vs5 > $max) $max = $vs5;
   $prozent = 100 / $max * $vs1;
-  $hoehe = 500;
+  $hoehe = 400;
   $breite = 100;
   $rand = 25;
   $aussl = ( $hoehe - 2 * $rand ) / 100 * $prozent;
   $bild = imagecreatetruecolor($breite, $hoehe);
-  $farbe_hintergrund = imagecolorexact($bild, 255, 255, 255);
+  $farbe_hintergrund = imagecolorexact($bild, 255, 204, 102);
   $lime = imagecolorallocate($bild, 0x00, 0xFF, 0x00);
   imagecolortransparent($bild, $lime);
   imagefill($bild, 0, 0, $farbe_hintergrund);

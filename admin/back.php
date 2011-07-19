@@ -47,11 +47,9 @@ if (!empty($_POST["eingang"]) || !empty($_POST["abgang"]) || !empty($_POST["gesa
       $schr->bind_param("iiiii", $vs01, $vs02, $vs03, $vs04, $vs05);
       $schr->execute();
       $schr->close();
-header("Location: back.php");
     }
-
   }
-
+header("Location: back.php");
 } else {
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
@@ -60,11 +58,12 @@ header("Location: back.php");
 <!-- <meta http-equiv="refresh" content="5; URL=back.php"> -->
 <title>Info-Back</title>
 <style type="text/css">
+
    div { border:0px solid #888; }
 #inf { position:absolute; width:29%; height:19%; left:20%; top:20%; text-align:center; }
 #uhr { position:absolute; width:29%; height:20%; left:20%; top:0px; text-align:center; }
 #pro { position:absolute; width:50%; height:39%; right:0px; top:0px; }
-#fah { position:absolute; width:20%; height:99%; left:0px; top:0px;}
+#fah { position:absolute; width:20%; height:99%; left:0px; top:0px; }
 #sto { position:absolute; width:79%; height:60%; right:0px; bottom:0px; text-align:center;}
 #vs1 { position:absolute; bottom:0px; height:80%; width:20%; left:0%;}
 #vs2 { position:absolute; bottom:0px; height:80%; width:20%; left:20%;}

@@ -7,11 +7,12 @@ require_once "admin/daten.php";
 <meta http-equiv="refresh" content="5; URL=index.php">
 <title>Info-Front</title>
 <style type="text/css">
+    body { background-color:#FFCC66;}
    div { border:0px solid #888; }
 #inf { position:absolute; width:29%; height:19%; left:20%; top:20%; text-align:center; }
 #uhr { position:absolute; width:29%; height:20%; left:20%; top:0px; text-align:center; }
 #pro { position:absolute; width:50%; height:39%; right:0px; top:0px; }
-#fah { position:absolute; width:20%; height:99%; left:0px; top:0px;}
+#fah { position:absolute; width:20%; height:99%; left:0px; top:0px; text-align:center;}
 #sto { position:absolute; width:79%; height:60%; right:0px; bottom:0px; text-align:center;}
 #vs1 { position:absolute; bottom:0px; height:80%; width:20%; left:0%;}
 #vs2 { position:absolute; bottom:0px; height:80%; width:20%; left:20%;}
@@ -75,9 +76,11 @@ function time() {
     $lesen->fetch();
     $lesen->close();
   }
+echo "gesammt\n";
 echo "<h1>" . htmlspecialchars($gesammt) . "</h1>\n";
+echo "gekommen\n";
 echo "<h1>" . htmlspecialchars($gekommen) . "</h1>\n";
-echo "<img src='fahrtdia.php' width='90%' alt=' ' />\n";
+echo "<img src='fahrtdia.php' alt=' ' />\n";
 ?>
 </div>
 <div id="sto">
@@ -92,27 +95,27 @@ echo "<img src='fahrtdia.php' width='90%' alt=' ' />\n";
 ?>
 <div id="vs1"><h3>VS1</h3>
 <?php echo "<h1>" . htmlspecialchars($vs1) . "</h1>\n"; 
-echo "<img src='vs1dia.php' height='60%' alt=' ' />\n";
+echo "<img src='vs1dia.php' alt=' ' />\n";
 ?>
 </div>
 <div id="vs2"><h3>VS2</h3>
 <?php echo "<h1>" . htmlspecialchars($vs2) . "</h1>\n";
-echo "<img src='vs2dia.php' height='60%' alt=' ' />\n";
+echo "<img src='vs2dia.php' alt=' ' />\n";
  ?>
 </div>
 <div id="vs3"><h3>VS3</h3>
 <?php echo "<h1>" . htmlspecialchars($vs3) . "</h1>\n"; 
-echo "<img src='vs3dia.php' height='60%' alt=' ' />\n";
+echo "<img src='vs3dia.php' alt=' ' />\n";
 ?>
 </div>
 <div id="vs4"><h3>VS4</h3>
 <?php echo "<h1>" . htmlspecialchars($vs4) . "</h1>\n"; 
-echo "<img src='vs4dia.php' height='60%' alt=' ' />\n";
+echo "<img src='vs4dia.php' alt=' ' />\n";
 ?>
 </div>
 <div id="vs5"><h3>VS5</h3>
 <?php echo "<h1>" . htmlspecialchars($vs5) . "</h1>\n"; 
-echo "<img src='vs5dia.php' height='60%' alt=' ' />\n";
+echo "<img src='vs5dia.php' alt=' ' />\n";
 ?>
 </div>
 </div>

@@ -9,11 +9,12 @@
   $prozent = 100 / htmlspecialchars($gesammt) * htmlspecialchars($gekommen);
   $winkel = 360 / 100 * $prozent;
   header("Content-type: image/gif");
-  $bild = imagecreatetruecolor(500, 500);
-  $farbe_hintergrund = imagecolorexact($bild, 255, 255, 255);
+$gro = 400;
+  $bild = imagecreatetruecolor($gro, $gro);
+  $farbe_hintergrund = imagecolorexact($bild, 255, 204, 102);
   imagefill($bild, 0, 0, $farbe_hintergrund);
   $red   = imagecolorallocate($bild, 255,   0,   0);
-  imagefilledarc($bild, 250, 250, 400, 400,  180, 180 + $winkel, $red, IMG_ARC_PIE);
+  imagefilledarc($bild, $gro/2, $gro/2, $gro-10, $gro-10,  180, 180 + $winkel, $red, IMG_ARC_PIE);
   imagegif($bild);
   imagedestroy($bild);
 ?>
