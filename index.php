@@ -30,7 +30,7 @@ require_once "admin/daten.php";
 #inf { position:absolute; width:29%; height:19%; left:20%; top:20%; text-align:center; }
 #uhr { position:absolute; width:29%; height:20%; left:20%; top:0px; text-align:center; font-size:200%; }
 #pro { position:absolute; width:40%; height:39%; right:0px; top:0px; }
-#fah { position:absolute; width:20%; height:99%; left:0px; top:0px; }
+#fah { position:absolute; width:20%; height:99%; left:5px; top:0px; }
 #sto { position:absolute; width:79%; height:60%; right:0px; bottom:0px; text-align:center;}
 #vs1 { position:absolute; bottom:0px; height:80%; width:20%; left:0%;}
 #vs2 { position:absolute; bottom:0px; height:80%; width:20%; left:20%;}
@@ -39,7 +39,7 @@ require_once "admin/daten.php";
 #vs5 { position:absolute; bottom:0px; height:80%; width:20%; left:80%;}
 .box { text-align:center; }
 .bez { font-size:150%; }
-.wert { font-size:400%; }
+.wert { font-size:400%; text-align:right;}
 </style>
 <script type="text/javascript">
 <!--
