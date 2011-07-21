@@ -1,6 +1,5 @@
 <?php
 require_once "admin/daten.php";
-<<<<<<< HEAD
 if ($lesen = $datab->prepare("SELECT eingang, abgang FROM prognose WHERE id=1")) {
   $lesen->execute();
   $lesen->bind_result($eingang, $abgang);
@@ -19,26 +18,6 @@ if ($lesen = $datab->prepare("SELECT vs1, vs2, vs3, vs4, vs5 FROM stoerung WHERE
   $lesen->fetch();
   $lesen->close();
 }
-=======
-  if ($lesen = $datab->prepare("SELECT eingang, abgang FROM prognose WHERE id=1")) {
-    $lesen->execute();
-    $lesen->bind_result($eingang, $abgang);
-    $lesen->fetch();
-    $lesen->close();
-  }
-  if ($lesen = $datab->prepare("SELECT gesammt, gekommen FROM fahrten WHERE id=1")) {
-    $lesen->execute();
-    $lesen->bind_result($gesammt, $gekommen);
-    $lesen->fetch();
-    $lesen->close();
-  }
-  if ($lesen = $datab->prepare("SELECT vs1, vs2, vs3, vs4, vs5 FROM stoerung WHERE id=1")) {
-    $lesen->execute();
-    $lesen->bind_result($vs1, $vs2, $vs3, $vs4, $vs5);
-    $lesen->fetch();
-    $lesen->close();
-  }
->>>>>>> 4fca31ad6f4fde9ffd1008fbc323e23d57e99d78
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
@@ -100,25 +79,15 @@ function time() {
 <div id="pro">
 <h2>Prognose</h2>
 <table>
-<<<<<<< HEAD
   <tr><td class="bez">Abgang</td><td class="wert"><?php echo htmlspecialchars($abgang); ?></td></tr>
   <tr><td class="bez">Eingang</td><td class="wert"><?php echo htmlspecialchars($eingang); ?></td></tr>
-=======
-<tr><td class="bez">Abgang</td><td class="wert"><?php echo htmlspecialchars($abgang); ?></td></tr>
-<tr><td class="bez">Eingang</td><td class="wert"><?php echo htmlspecialchars($eingang); ?></td></tr>
->>>>>>> 4fca31ad6f4fde9ffd1008fbc323e23d57e99d78
 </table>
 </div>
 <div id="fah">
 <h2 class="box">Fahrten</h2>
 <table>
-<<<<<<< HEAD
   <tr><td class="bez">gesammt</td><td class="wert"><?php echo htmlspecialchars($gesammt); ?></td></tr>
   <tr><td class="bez">gekommen</td><td class="wert"><?php echo htmlspecialchars($gekommen); ?></td></tr>
-=======
-<tr><td class="bez">gesammt</td><td class="wert"><?php echo htmlspecialchars($gesammt); ?></td></tr>
-<tr><td class="bez">gekommen</td><td class="wert"><?php echo htmlspecialchars($gekommen); ?></td></tr>
->>>>>>> 4fca31ad6f4fde9ffd1008fbc323e23d57e99d78
 </table>
 <img src='fahrtdia.php' alt=' ' />
 </div>
