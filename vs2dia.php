@@ -13,7 +13,7 @@
   if($vs4 > $max) $max = $vs4;
   if($vs5 > $max) $max = $vs5;
   $prozent = 100 / $max * $vs2;
-  $hoehe = 400;
+  $hoehe = 365;
   $breite = 100;
   $rand = 25;
   $aussl = ( $hoehe - 2 * $rand ) / 100 * $prozent;
