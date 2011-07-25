@@ -30,11 +30,7 @@ div { border:0px solid #888; }
 #inf { position:absolute; width:29%; height:19%; left:20%; top:20%; text-align:center; }
 #uhr { position:absolute; width:29%; height:20%; left:20%; top:0px; text-align:center; font-size:200%; }
 #pro { position:absolute; width:40%; height:39%; right:0px; top:0px; }
-<<<<<<< HEAD
 #fah { position:absolute; width:20%; height:99%; left:35px; top:0px; }
-=======
-#fah { position:absolute; width:20%; height:99%; left:5px; top:0px; }
->>>>>>> 4fca31ad6f4fde9ffd1008fbc323e23d57e99d78
 #sto { position:absolute; width:79%; height:60%; right:0px; bottom:0px; text-align:center;}
 #vs1 { position:absolute; bottom:0px; height:80%; width:20%; left:0%;}
 #vs2 { position:absolute; bottom:0px; height:80%; width:20%; left:20%;}
