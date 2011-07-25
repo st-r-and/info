@@ -67,7 +67,7 @@ function time() {
 </head>
 <body onload="start();">
 <div id="inf">
-<h1>INFO</h1>
+<h1>Halleninformation</h1>
 </div>
 <div id="uhr">
 <h1 id="time"></h1>
@@ -75,41 +75,41 @@ function time() {
 <div id="pro">
 <h2>Prognose</h2>
 <table>
-  <tr><td class="bez">Abgang</td><td class="wert"><?php echo htmlspecialchars($abgang); ?></td></tr>
-  <tr><td class="bez">Eingang</td><td class="wert"><?php echo htmlspecialchars($eingang); ?></td></tr>
+  <tr><td class="bez">Abgang: </td><td class="wert"><?php echo htmlspecialchars($abgang); ?></td></tr>
+  <tr><td class="bez">Eingang: </td><td class="wert"><?php echo htmlspecialchars($eingang); ?></td></tr>
 </table>
 </div>
 <div id="fah">
 <h2 class="box">Fahrten</h2>
 <table>
-  <tr><td class="bez">gesammt</td><td class="wert"><?php echo htmlspecialchars($gesammt); ?></td></tr>
-  <tr><td class="bez">gekommen</td><td class="wert"><?php echo htmlspecialchars($gekommen); ?></td></tr>
+  <tr><td class="bez">GESAMT</td><td class="wert"><?php echo htmlspecialchars($gesammt); ?></td></tr>
+  <tr><td class="bez">GEKOMMEN</td><td class="wert"><?php echo htmlspecialchars($gekommen); ?></td></tr>
 </table>
 <img src='fahrtdia.php' alt=' ' />
 </div>
 <div id="sto">
-<h2>Vorsorterstoerung</h2>
-<div id="vs1"><h3>VS1</h3>
+  <h2>Vorsorterst&oumlrung</h2>
+<div id="vs1"><h3>VS 1</h3>
   <?php echo "<h1>" . htmlspecialchars($vs1) . "</h1>\n";
   echo "<img src='vs1dia.php' alt=' ' />\n";
 ?>
 </div>
-<div id="vs2"><h3>VS2</h3>
+<div id="vs2"><h3>VS 2</h3>
   <?php echo "<h1>" . htmlspecialchars($vs2) . "</h1>\n";
   echo "<img src='vs2dia.php' alt=' ' />\n";
  ?>
 </div>
-<div id="vs3"><h3>VS3</h3>
+<div id="vs3"><h3>VS 3</h3>
   <?php echo "<h1>" . htmlspecialchars($vs3) . "</h1>\n";
   echo "<img src='vs3dia.php' alt=' ' />\n";
 ?>
 </div>
-<div id="vs4"><h3>VS4</h3>
+<div id="vs4"><h3>VS 4</h3>
   <?php echo "<h1>" . htmlspecialchars($vs4) . "</h1>\n";
   echo "<img src='vs4dia.php' alt=' ' />\n";
 ?>
 </div>
-<div id="vs5"><h3>VS5</h3>
+<div id="vs5"><h3>VS 5</h3>
   <?php echo "<h1>" . htmlspecialchars($vs5) . "</h1>\n";
   echo "<img src='vs5dia.php' alt=' ' />\n";
 ?>
