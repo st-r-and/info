@@ -18,8 +18,8 @@ if ($lesen = $datab->prepare("SELECT gesammt, gekommen FROM fahrten WHERE id=1")
     $lesen->fetch();
     $lesen->close();
 }
-if (!empty($_POST["eingang"]) || !empty($_POST["abgang"]) || !empty($_POST["gesammt"]) || !empty($_POST["gekommen"]) || !empty($_POST["vs1"]) || !empty($_POST["vs2"]) || !empty($_POST["vs3"]) || !empty($_POST["vs4"]) || !empty($_POST["vs5"])) {
-  if (!empty($_POST["eingang"]) || !empty($_POST["abgang"])) {
+if (isset($_POST["eingang"]) || isset($_POST["abgang"]) || isset($_POST["gesammt"]) || isset($_POST["gekommen"]) || isset($_POST["vs1"]) || isset($_POST["vs2"]) || isset($_POST["vs3"]) || isset($_POST["vs4"]) || isset($_POST["vs5"])) {
+  if (isset($_POST["eingang"]) || isset($_POST["abgang"])) {
     if($schr = $datab->prepare("UPDATE prognose SET eingang=?, abgang=? WHERE id=1")) {
       $eing = $_POST["eingang"];
       $abg = $_POST["abgang"];
@@ -28,7 +28,7 @@ if (!empty($_POST["eingang"]) || !empty($_POST["abgang"]) || !empty($_POST["gesa
       $schr->close();
     }
   }
-  if(!empty($_POST["gesammt"]) || !empty($_POST["gekommen"])){
+  if(isset($_POST["gesammt"]) || isset($_POST["gekommen"])){
     if($schr = $datab->prepare("UPDATE fahrten SET gesammt=?, gekommen=? WHERE id=1")) {
       $ges = $_POST["gesammt"];
       $gek = $_POST["gekommen"];
@@ -37,7 +37,7 @@ if (!empty($_POST["eingang"]) || !empty($_POST["abgang"]) || !empty($_POST["gesa
       $schr->close();
       }
   }
-  if (!empty($_POST["vs1"]) || !empty($_POST["vs2"]) || !empty($_POST["vs3"]) || !empty($_POST["vs4"]) || !empty($_POST["vs5"])){
+  if (isset($_POST["vs1"]) || isset($_POST["vs2"]) || isset($_POST["vs3"]) || isset($_POST["vs4"]) || isset($_POST["vs5"])){
     if($schr = $datab->prepare("UPDATE stoerung SET vs1=?, vs2=?, vs3=?, vs4=?, vs5=? WHERE id=1")) {
       $vs01 = $_POST["vs1"];
       $vs02 = $_POST["vs2"];
@@ -49,7 +49,8 @@ if (!empty($_POST["eingang"]) || !empty($_POST["abgang"]) || !empty($_POST["gesa
       $schr->close();
     }
   }
-header("Location: back.php");
+    //    if ($back)
+  header("Location: back.php");
 } else {
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
