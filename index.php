@@ -27,9 +27,9 @@ if ($lesen = $datab->prepare("SELECT vs1, vs2, vs3, vs4, vs5 FROM stoerung WHERE
 <style type="text/css">
   body { background-color:#FFCC66;}
 div { border:0px solid #888; }
-#inf { position:absolute; width:29%; height:19%; left:20%; top:20%; text-align:center; }
-#uhr { position:absolute; width:29%; height:20%; left:20%; top:0px; text-align:center; font-size:200%; }
-#pro { position:absolute; width:40%; height:39%; right:0px; top:0px; }
+#inf { position:absolute; width:29%; height:19%; left:30%; top:20%; }
+#uhr { position:absolute; width:29%; height:20%; left:30%; top:0px; text-align:center; font-size:200%; }
+#pro { position:absolute; width:30%; height:39%; right:0px; top:0px; }
 #fah { position:absolute; width:20%; height:99%; left:35px; top:0px; }
 #sto { position:absolute; width:79%; height:60%; right:0px; bottom:0px; text-align:center;}
 #vs1 { position:absolute; bottom:0px; height:80%; width:20%; left:0%;}
@@ -37,7 +37,7 @@ div { border:0px solid #888; }
 #vs3 { position:absolute; bottom:0px; height:80%; width:20%; left:40%;}
 #vs4 { position:absolute; bottom:0px; height:80%; width:20%; left:60%;}
 #vs5 { position:absolute; bottom:0px; height:80%; width:20%; left:80%;}
-.box { text-align:center; }
+.box { text-align:center; font-size:220%; }
 .bez { font-size:150%; }
 .wert { font-size:400%; text-align:right;}
 </style>
@@ -67,13 +67,13 @@ function time() {
 </head>
 <body onload="start();">
 <div id="inf">
-<h1>Halleninformation</h1>
+<h1 class="box">Halleninformation</h1>
 </div>
 <div id="uhr">
 <h1 id="time"></h1>
 </div>
 <div id="pro">
-<h2>Prognose</h2>
+<h2 class="box">Prognose</h2>
 <table>
   <tr><td class="bez">Abgang: </td><td class="wert"><?php echo htmlspecialchars($abgang); ?></td></tr>
   <tr><td class="bez">Eingang: </td><td class="wert"><?php echo htmlspecialchars($eingang); ?></td></tr>
@@ -85,10 +85,11 @@ function time() {
   <tr><td class="bez">GESAMT</td><td class="wert"><?php echo htmlspecialchars($gesammt); ?></td></tr>
   <tr><td class="bez">GEKOMMEN</td><td class="wert"><?php echo htmlspecialchars($gekommen); ?></td></tr>
 </table>
+<br />
 <img src='fahrtdia.php' alt=' ' />
 </div>
 <div id="sto">
-  <h2>Vorsorterst&oumlrung</h2>
+  <h2 class="box">Vorsorterst&oumlrung</h2>
 <div id="vs1"><h3>VS 1</h3>
   <?php echo "<h1>" . htmlspecialchars($vs1) . "</h1>\n";
   echo "<img src='vs1dia.php' alt=' ' />\n";
