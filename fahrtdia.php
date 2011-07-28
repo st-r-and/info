@@ -14,7 +14,7 @@
   $farbe_hintergrund = imagecolorexact($bild, 255, 204, 102);
   imagefill($bild, 0, 0, $farbe_hintergrund);
   $red   = imagecolorallocate($bild, 255,   0,   0);
-if ($winkel > 0) imagefilledarc($bild, $gro/2, $gro/2, $gro-10, $gro-10,  180, 180 + $winkel, $red, IMG_ARC_PIE);
+if ($winkel > 0 && $gesammt > 0) imagefilledarc($bild, $gro/2, $gro/2, $gro-10, $gro-10,  180, 180 + $winkel, $red, IMG_ARC_PIE);
   imagegif($bild);
   imagedestroy($bild);
 ?>
