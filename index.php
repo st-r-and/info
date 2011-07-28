@@ -38,7 +38,7 @@ div { border:0px solid #888; }
 #vs4 { position:absolute; bottom:0px; height:80%; width:20%; left:60%;}
 #vs5 { position:absolute; bottom:0px; height:80%; width:20%; left:80%;}
 .box { text-align:center; font-size:220%; }
-.bez { font-size:150%; }
+.bez { font-size:200%; }
 .wert { font-size:400%; text-align:right;}
 </style>
 <script type="text/javascript">
@@ -82,38 +82,33 @@ function time() {
 <div id="fah">
 <h2 class="box">Fahrten</h2>
 <table>
-  <tr><td class="bez">GESAMT</td><td class="wert"><?php echo htmlspecialchars($gesammt); ?></td></tr>
-  <tr><td class="bez">GEKOMMEN</td><td class="wert"><?php echo htmlspecialchars($gekommen); ?></td></tr>
+  <tr><td class="bez">Gesamt: </td><td class="wert"><?php echo htmlspecialchars($gesammt); ?></td></tr>
+  <tr><td class="bez">Gekommen: </td><td class="wert"><?php echo htmlspecialchars($gekommen); ?></td></tr>
 </table>
 <br />
 <img src='fahrtdia.php' alt=' ' />
 </div>
 <div id="sto">
   <h2 class="box">Vorsorterst&oumlrung</h2>
-<div id="vs1"><h3>VS 1</h3>
-  <?php echo "<h1>" . htmlspecialchars($vs1) . "</h1>\n";
-  echo "<img src='vs1dia.php' alt=' ' />\n";
-?>
+<div id="vs1"><span class="bez">VS 1</span><br/>
+  <span class="wert"> <?php echo htmlspecialchars($vs1); ?> </span>
+  <img src='<?php echo vs1dia.php; ?>' alt=' ' />
 </div>
-<div id="vs2"><h3>VS 2</h3>
-  <?php echo "<h1>" . htmlspecialchars($vs2) . "</h1>\n";
-  echo "<img src='vs2dia.php' alt=' ' />\n";
- ?>
+<div id="vs2"><span class="bez">VS 2</span><br/>
+  <span class="wert"> <?php echo htmlspecialchars($vs2); ?> </span>
+  <img src='<?php echo vs2dia.php; ?>' alt=' ' />
 </div>
-<div id="vs3"><h3>VS 3</h3>
-  <?php echo "<h1>" . htmlspecialchars($vs3) . "</h1>\n";
-  echo "<img src='vs3dia.php' alt=' ' />\n";
-?>
+<div id="vs3"><span class="bez">VS 3</span><br/>
+  <span class="wert"> <?php echo htmlspecialchars($vs3); ?> </span>
+  <img src='<?php echo vs3dia.php; ?>' alt=' ' />
 </div>
-<div id="vs4"><h3>VS 4</h3>
-  <?php echo "<h1>" . htmlspecialchars($vs4) . "</h1>\n";
-  echo "<img src='vs4dia.php' alt=' ' />\n";
-?>
+<div id="vs4"><span class="bez">VS 4</span><br/>
+  <span class="wert"> <?php echo htmlspecialchars($vs3); ?> </span>
+  <img src='<?php echo vs4dia.php; ?>' alt=' ' />
 </div>
-<div id="vs5"><h3>VS 5</h3>
-  <?php echo "<h1>" . htmlspecialchars($vs5) . "</h1>\n";
-  echo "<img src='vs5dia.php' alt=' ' />\n";
-?>
+<div id="vs5"><span class="bez">VS 5</span><br/>
+  <span class="wert"> <?php echo htmlspecialchars($vs3); ?> </span>
+  <img src='<?php echo vs5dia.php; ?>' alt=' ' />
 </div>
 </div>
 </body>
