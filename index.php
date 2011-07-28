@@ -91,24 +91,24 @@ function time() {
 <div id="sto">
   <h2 class="box">Vorsorterst&oumlrung</h2>
 <div id="vs1"><span class="bez">VS 1</span><br/>
-  <span class="wert"> <?php echo htmlspecialchars($vs1); ?> </span>
-  <img src='<?php echo vs1dia.php; ?>' alt=' ' />
+  <span class="wert"> <?php echo htmlspecialchars($vs1); ?> </span><br />
+  <img src='vs1dia.php' alt=' ' />
 </div>
 <div id="vs2"><span class="bez">VS 2</span><br/>
-  <span class="wert"> <?php echo htmlspecialchars($vs2); ?> </span>
-  <img src='<?php echo vs2dia.php; ?>' alt=' ' />
+  <span class="wert"> <?php echo htmlspecialchars($vs2); ?> </span><br />
+  <img src='vs2dia.php' alt=' ' />
 </div>
 <div id="vs3"><span class="bez">VS 3</span><br/>
-  <span class="wert"> <?php echo htmlspecialchars($vs3); ?> </span>
-  <img src='<?php echo vs3dia.php; ?>' alt=' ' />
+  <span class="wert"> <?php echo htmlspecialchars($vs3); ?> </span><br />
+  <img src='vs3dia.php' alt=' ' />
 </div>
 <div id="vs4"><span class="bez">VS 4</span><br/>
-  <span class="wert"> <?php echo htmlspecialchars($vs3); ?> </span>
-  <img src='<?php echo vs4dia.php; ?>' alt=' ' />
+  <span class="wert"> <?php echo htmlspecialchars($vs4); ?> </span><br />
+  <img src='vs4dia.php' alt=' ' />
 </div>
 <div id="vs5"><span class="bez">VS 5</span><br/>
-  <span class="wert"> <?php echo htmlspecialchars($vs3); ?> </span>
-  <img src='<?php echo vs5dia.php; ?>' alt=' ' />
+  <span class="wert"> <?php echo htmlspecialchars($vs5); ?> </span><br />
+  <img src='vs5dia.php' alt=' ' />
 </div>
 </div>
 </body>
