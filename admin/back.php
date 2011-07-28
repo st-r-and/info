@@ -12,13 +12,20 @@ if ($lesen = $datab->prepare("SELECT gesammt, gekommen FROM fahrten WHERE id=1")
     $lesen->fetch();
     $lesen->close();
   }
-  if ($lesen = $datab->prepare("SELECT vs1, vs2, vs3, vs4, vs5 FROM stoerung WHERE id=1")) {
+if ($lesen = $datab->prepare("SELECT vs1, vs2, vs3, vs4, vs5 FROM stoerung WHERE id=1")) {
     $lesen->execute();
     $lesen->bind_result($vs1, $vs2, $vs3, $vs4, $vs5);
     $lesen->fetch();
     $lesen->close();
 }
-if (isset($_POST["eingang"]) || isset($_POST["abgang"]) || isset($_POST["gesammt"]) || isset($_POST["gekommen"]) || isset($_POST["vs1"]) || isset($_POST["vs2"]) || isset($_POST["vs3"]) || isset($_POST["vs4"]) || isset($_POST["vs5"])) {
+if ($lesen = $datab->prepare("SELECT bearbeitete FROM durchsatz WHERE id=1")) {
+  $lesen->execute();
+  $lesen->bind_result($bearb);
+  $lesen->fetch();
+  $lesen->close();
+}
+
+if (isset($_POST["eingang"]) || isset($_POST["abgang"]) || isset($_POST["gesammt"]) || isset($_POST["gekommen"]) || isset($_POST["vs1"]) || isset($_POST["vs2"]) || isset($_POST["vs3"]) || isset($_POST["vs4"]) || isset($_POST["vs5"]) || isset($_POST["bearb"])) {
   if (isset($_POST["eingang"]) || isset($_POST["abgang"])) {
     if($schr = $datab->prepare("UPDATE prognose SET eingang=?, abgang=? WHERE id=1")) {
       $eing = $_POST["eingang"];
@@ -49,7 +56,14 @@ if (isset($_POST["eingang"]) || isset($_POST["abgang"]) || isset($_POST["gesammt
       $schr->close();
     }
   }
-    //    if ($back)
+  if (isset($_POST["bearb"])){
+    if($schr = $datab->prepare("UPDATE durchsatz SET bearbeitete=? WHERE id=1")) {
+      $bear = $_POST["bearb"];
+      $schr->bind_param("i", $bear);
+      $schr->execute();
+      $schr->close();
+    }
+  }
   header("Location: back.php");
 } else {
 ?>
@@ -60,10 +74,11 @@ if (isset($_POST["eingang"]) || isset($_POST["abgang"]) || isset($_POST["gesammt
 <title>Info-Back</title>
 <style type="text/css">
 
-   div { border:0px solid #888; }
+   div { border:1px solid #888; }
 #inf { position:absolute; width:29%; height:19%; left:20%; top:20%; text-align:center; }
 #uhr { position:absolute; width:29%; height:20%; left:20%; top:0px; text-align:center; }
-#pro { position:absolute; width:50%; height:39%; right:0px; top:0px; }
+#pro { position:absolute; width:20%; height:39%; right:30%; top:0px; }
+#bea { position:absolute; width:30%; height:39%; right:0%; top:0px; }
 #fah { position:absolute; width:20%; height:99%; left:0px; top:0px; }
 #sto { position:absolute; width:79%; height:60%; right:0px; bottom:0px; text-align:center;}
 #vs1 { position:absolute; bottom:0px; height:80%; width:20%; left:0%;}
@@ -112,6 +127,12 @@ function time() {
 <h3>Eingang</h3>
 <input type="text" name="eingang" value="<?php echo htmlspecialchars($eingang) ?>" /> 
 <?php echo  htmlspecialchars($eingang) . "<br />\n"; ?>
+</div>
+<div id="bea">
+<h2> bearbeitet <br />
+Sendungen</h2>
+<input type="text" name="bearb" value="<?php echo htmlspecialchars($bearb) ?>" />
+    <?php echo htmlspecialchars($bearb) ?><br />
 </div>
 <div id="fah">
 <h2>Fahrten</h2>

@@ -18,6 +18,12 @@ if ($lesen = $datab->prepare("SELECT vs1, vs2, vs3, vs4, vs5 FROM stoerung WHERE
   $lesen->fetch();
   $lesen->close();
 }
+if ($lesen = $datab->prepare("SELECT bearbeitete FROM durchsatz WHERE id=1")) {
+  $lesen->execute();
+  $lesen->bind_result($bearb);
+  $lesen->fetch();
+  $lesen->close();
+}
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
@@ -77,6 +83,7 @@ function time() {
 <table>
   <tr><td class="bez">Abgang: </td><td class="wert"><?php echo htmlspecialchars($abgang); ?></td></tr>
   <tr><td class="bez">Eingang: </td><td class="wert"><?php echo htmlspecialchars($eingang); ?></td></tr>
+  <tr><td class="bez">Bearbeitet: </td><td class="wert"><?php echo htmlspecialchars($bearb);?></td></tr>
 </table>
 </div>
 <div id="fah">
