@@ -22,8 +22,10 @@
   imagefill($bild, 0, 0, $farbe_hintergrund);
   $black = imagecolorallocate($bild, 0,   0,   0);
   $red   = imagecolorallocate($bild, 255,   0,   0);
+if ($max > 0) {
   imagefilledrectangle($bild, $rand, $hoehe - $rand - $aussl, $breite - $rand, $hoehe - $rand, $red);
   imagerectangle($bild, $rand, $rand, $breite - $rand, $hoehe -$rand, $black);
+}
   imagegif($bild);
   imagedestroy($bild);
 ?>
