@@ -1,0 +1,7 @@
+<?php
+$datab = new mysqli("localhost", "webuser", "web4all", "info");
+if ($datab->connect_error) {
+echo "Fehler bei der Verbindung: " . mysqli_connect_error();
+exit();
+}
+?>
