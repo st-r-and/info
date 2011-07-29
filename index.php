@@ -36,6 +36,7 @@ div { border:0px solid #888; }
 #inf { position:absolute; width:29%; height:19%; left:30%; top:20%; }
 #uhr { position:absolute; width:29%; height:20%; left:30%; top:0px; text-align:center; font-size:200%; }
 #pro { position:absolute; width:30%; height:39%; right:0px; top:0px; }
+#pdi { position:absolute; width:10%; height:39%; right:30%; top:0px; }
 #fah { position:absolute; width:20%; height:99%; left:35px; top:0px; }
 #sto { position:absolute; width:79%; height:60%; right:0px; bottom:0px; text-align:center;}
 #vs1 { position:absolute; bottom:0px; height:80%; width:20%; left:0%;}
@@ -85,6 +86,9 @@ function time() {
   <tr><td class="bez">Eingang: </td><td class="wert"><?php echo htmlspecialchars($eingang); ?></td></tr>
   <tr><td class="bez">Bearbeitet: </td><td class="wert"><?php echo htmlspecialchars($bearb);?></td></tr>
 </table>
+</div>
+<div id="pdi">
+<img src='durchsdia.php' alt='' />
 </div>
 <div id="fah">
 <h2 class="box">Fahrten</h2>
