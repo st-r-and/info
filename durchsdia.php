@@ -41,5 +41,5 @@ if ($prog > 0) {
 }
   imagegif($bild);
   imagedestroy($bild);
-
+$datab->close();
 ?>

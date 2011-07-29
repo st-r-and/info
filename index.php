@@ -124,3 +124,6 @@ function time() {
 </div>
 </body>
 </head>
+<?php
+  $datab->close();
+?>

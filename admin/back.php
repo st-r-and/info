@@ -124,7 +124,7 @@ function time() {
 <h2>Prognose</h2>
 <table>
 <tr><td><h3>Abgang</h3></td><td><input type="text" name="abgang" size="8" value="<?php echo htmlspecialchars($abgang) ?>" /></td></tr>
-<tr><td><h3>Eingang</h3></td><td><input type="text" name="abgang" size="8" value="<?php echo htmlspecialchars($eingang) ?>" /></td></tr>
+<tr><td><h3>Eingang</h3></td><td><input type="text" name="eingang" size="8" value="<?php echo htmlspecialchars($eingang) ?>" /></td></tr>
 </table>
 </div>
 <div id="bea">
@@ -165,6 +165,6 @@ aktuelle Schicht<br />
 </body>
 </head>
 <?php
-
 }
+$datab->close();
 ?>

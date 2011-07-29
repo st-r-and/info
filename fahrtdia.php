@@ -17,4 +17,5 @@
 if ($winkel > 0 && $gesammt > 0) imagefilledarc($bild, $gro/2, $gro/2, $gro-10, $gro-10,  180, 180 + $winkel, $red, IMG_ARC_PIE);
   imagegif($bild);
   imagedestroy($bild);
+$datab->close();
 ?>
