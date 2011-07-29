@@ -74,18 +74,19 @@ if (isset($_POST["eingang"]) || isset($_POST["abgang"]) || isset($_POST["gesammt
 <title>Info-Back</title>
 <style type="text/css">
 
-   div { border:1px solid #888; }
+   div { border:0px solid #888; }
 #inf { position:absolute; width:29%; height:19%; left:20%; top:20%; text-align:center; }
 #uhr { position:absolute; width:29%; height:20%; left:20%; top:0px; text-align:center; }
 #pro { position:absolute; width:20%; height:39%; right:30%; top:0px; }
 #bea { position:absolute; width:30%; height:39%; right:0%; top:0px; }
-#fah { position:absolute; width:20%; height:99%; left:0px; top:0px; }
+#fah { position:absolute; width:20%; height:99%; left:35px; top:0px; }
 #sto { position:absolute; width:79%; height:60%; right:0px; bottom:0px; text-align:center;}
 #vs1 { position:absolute; bottom:0px; height:80%; width:20%; left:0%;}
 #vs2 { position:absolute; bottom:0px; height:80%; width:20%; left:20%;}
 #vs3 { position:absolute; bottom:0px; height:80%; width:20%; left:40%;}
 #vs4 { position:absolute; bottom:0px; height:80%; width:20%; left:60%;}
 #vs5 { position:absolute; bottom:0px; height:80%; width:20%; left:80%;}
+#send {position:absolute; bottom:10px; right:10px;}
 </style>
 <script type="text/javascript">
 <!--
@@ -113,7 +114,7 @@ function time() {
 </head>
 <body onload="start();">
 <div id="inf">
-<h1>INFO</h1>
+<h1>Dateneingabe Halleninformation Infocenter</h1>
 </div>
 <div id="uhr">
 <h1 id="time"></h1>
@@ -121,50 +122,44 @@ function time() {
 <div id="pro">
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])?>">
 <h2>Prognose</h2>
-<h3>Abgang</h3>
-<input type="text" name="abgang" value="<?php echo htmlspecialchars($abgang) ?>" />
-<?php echo htmlspecialchars($abgang) . "<br />\n"; ?>
-<h3>Eingang</h3>
-<input type="text" name="eingang" value="<?php echo htmlspecialchars($eingang) ?>" /> 
-<?php echo  htmlspecialchars($eingang) . "<br />\n"; ?>
+<table>
+<tr><td><h3>Abgang</h3></td><td><input type="text" name="abgang" size="8" value="<?php echo htmlspecialchars($abgang) ?>" /></td></tr>
+<tr><td><h3>Eingang</h3></td><td><input type="text" name="abgang" size="8" value="<?php echo htmlspecialchars($eingang) ?>" /></td></tr>
+</table>
 </div>
 <div id="bea">
-<h2> bearbeitet <br />
+<h2> bearbeitete <br />
 Sendungen</h2>
-<input type="text" name="bearb" value="<?php echo htmlspecialchars($bearb) ?>" />
-    <?php echo htmlspecialchars($bearb) ?><br />
+<input type="text" name="bearb" size="8" value="<?php echo htmlspecialchars($bearb) ?>" />
 </div>
 <div id="fah">
 <h2>Fahrten</h2>
-<input type="text" name="gesammt" value="<?php echo htmlspecialchars($gesammt) ?>" />
-<?php echo  htmlspecialchars($gesammt) . "<br />\n"; ?>
-<input type="text" name="gekommen" value="<?php echo htmlspecialchars($gekommen) ?>" />
-<?php echo  htmlspecialchars($gekommen) . "<br />\n";?>
+aktuelle Schicht<br />
+<table>
+<tr><td><h3>Sollfahrten</h3></td><td><input type="text" name="gesammt" size="3" value="<?php echo htmlspecialchars($gesammt) ?>" /></td></tr>
+<tr><td><h3>Istfahrten</h3></td><td><input type="text" name="gekommen" size="3" value="<?php echo htmlspecialchars($gekommen) ?>" /></td></tr>
+</table>
 </div>
 <div id="sto">
 <h2>Vorsorterstoerung</h2>
 <div id="vs1"><h3>VS1</h3>
-<input type="text" name="vs1" value="<?php echo htmlspecialchars($vs1) ?>" />
-<?php echo "<h1>" . htmlspecialchars($vs1) . "</h1>\n"; ?>
+<input type="text" name="vs1" size="3" value="<?php echo htmlspecialchars($vs1) ?>" />
 </div>
 <div id="vs2"><h3>VS2</h3>
-<input type="text" name="vs2" value="<?php echo htmlspecialchars($vs2) ?>" />
-<?php echo "<h1>" . htmlspecialchars($vs2) . "</h1>\n"; ?>
+<input type="text" name="vs2" size="3" value="<?php echo htmlspecialchars($vs2) ?>" />
 </div>
 <div id="vs3"><h3>VS3</h3>
-<input type="text" name="vs3" value="<?php echo htmlspecialchars($vs3) ?>" />
-<?php echo "<h1>" . htmlspecialchars($vs3) . "</h1>\n"; ?>
+<input type="text" name="vs3" size="3" value="<?php echo htmlspecialchars($vs3) ?>" />
 </div>
 <div id="vs4"><h3>VS4</h3>
-<input type="text" name="vs4" value="<?php echo htmlspecialchars($vs4) ?>" />
-<?php echo "<h1>" . htmlspecialchars($vs4) . "</h1>\n"; ?>
+<input type="text" name="vs4" size="3" value="<?php echo htmlspecialchars($vs4) ?>" />
 </div>
 <div id="vs5"><h3>VS5</h3>
-<input type="text" name="vs5" value="<?php echo htmlspecialchars($vs5) ?>" />
-<?php echo "<h1>" . htmlspecialchars($vs5) . "</h1>\n"; ?>
-<input type="submit" />
-
+<input type="text" name="vs5" size="3" value="<?php echo htmlspecialchars($vs5) ?>" />
 </div>
+</div>
+<div id="send">
+<input type="submit" />
 </div>
 </form>
 </body>
