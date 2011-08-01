@@ -30,47 +30,8 @@ if ($lesen = $datab->prepare("SELECT bearbeitete FROM durchsatz WHERE id=1")) {
 <head>
 <meta http-equiv="refresh" content="5; URL=index.php">
 <title>Info-Front</title>
-<style type="text/css">
-  body { background-color:#FFCC66;}
-div { border:0px solid #888; }
-#inf { position:absolute; width:29%; height:19%; left:30%; top:20%; }
-#uhr { position:absolute; width:29%; height:20%; left:30%; top:0px; text-align:center; font-size:200%; }
-#pro { position:absolute; width:30%; height:39%; right:0px; top:0px; }
-#pdi { position:absolute; width:10%; height:39%; right:30%; top:0px; }
-#fah { position:absolute; width:20%; height:99%; left:35px; top:0px; }
-#sto { position:absolute; width:79%; height:60%; right:0px; bottom:0px; text-align:center;}
-#vs1 { position:absolute; bottom:0px; height:80%; width:20%; left:0%;}
-#vs2 { position:absolute; bottom:0px; height:80%; width:20%; left:20%;}
-#vs3 { position:absolute; bottom:0px; height:80%; width:20%; left:40%;}
-#vs4 { position:absolute; bottom:0px; height:80%; width:20%; left:60%;}
-#vs5 { position:absolute; bottom:0px; height:80%; width:20%; left:80%;}
-.box { text-align:center; font-size:220%; }
-.bez { font-size:200%; }
-.wert { font-size:400%; text-align:right;}
-</style>
-<script type="text/javascript">
-<!--
-  function start() {
-  time();
-  window.setInterval("time()", 1000);
-}
-
-function time() {
-  var now = new Date();
-  hours = now.getHours();
-  minutes = now.getMinutes();
-  seconds = now.getSeconds();
-
-  thetime = (hours < 10) ? "0" + hours + ":" : hours + ":";
-  thetime += (minutes < 10) ? "0" + minutes + ":" : minutes + ":";
-  thetime += (seconds < 10) ? "0" + seconds : seconds;
-
-  element = document.getElementById("time");
-  element.innerHTML = thetime;
-}
-
-//-->
-</script>
+<link rel="stylesheet" type="text/css" href="./style.css" />
+<script type="text/javascript" src="./basic.js"></script>
 </head>
 <body onload="start();">
 <div id="inf">
