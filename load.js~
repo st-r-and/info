@@ -1,0 +1,18 @@
+  $(document).ready(function() {
+      $("#fah").load("fahrten.php");
+      var refreshId = setInterval(function() {
+          $("#fah").load('fahrten.php');
+	}, 1000);
+    });
+  $(document).ready(function() {
+      $("#pro").load("showpog.php");
+      var refreshId = setInterval(function() {
+          $("#pro").load('showpog.php');
+	}, 1000);
+    });
+  $(document).ready(function() {
+      $("#sto").load("showvs.php");
+      var refreshId = setInterval(function() {
+          $("#sto").load('showvs.php');
+	}, 1000);
+    });
