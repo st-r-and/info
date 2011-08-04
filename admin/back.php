@@ -137,7 +137,7 @@ Sendungen</h2>
 aktuelle Schicht<br />
 <table>
 <tr><td><h3>Sollfahrten</h3></td><td><input type="text" name="gesammt" size="3" value="<?php echo htmlspecialchars($gesammt) ?>" /></td></tr>
-<tr><td><h3>fehlende Fahrten</h3></td><td><input type="text" name="fehlende" size="3" value="<?php echo htmlspecialchars($gesammt-$gekommen) ?>" /></td></tr>
+<tr><td><h3 style="color:red;">fehlende Fahrten</h3></td><td><input type="text" name="fehlende" size="3" value="<?php echo htmlspecialchars($gesammt-$gekommen) ?>" /></td></tr>
 </table>
 </div>
 <div id="sto">
