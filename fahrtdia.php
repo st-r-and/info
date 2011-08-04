@@ -8,9 +8,7 @@
   }
 function farbverl($grad){
   $far = 255/100 * $grad;
-  //if($far<=255) 
   $code = array(255-$far,$far,0);
-  //if($far>255) $code = array(255-($far-255),255,0);
   return $code;
 }
 

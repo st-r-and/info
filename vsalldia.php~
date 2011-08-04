@@ -1,0 +1,10 @@
+<?php
+require_once "admin/daten.php";
+  if ($lesen = $datab->prepare("SELECT vs1, vs2, vs3, vs4, vs5 FROM stoerung WHERE id=1")) {
+      $lesen->execute();
+      $lesen->bind_result($vs1, $vs2, $vs3, $vs4, $vs5);
+      $lesen->fetch();
+      $lesen->close();
+  }
+
+?>

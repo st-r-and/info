@@ -1,8 +1,5 @@
 <?php
-require_once "admin/daten.php";
-if ($schicht){
-echo "eingang";
-}else{
-echo "abgang";
-}
+require_once "vsalldia.php";
+echo $max;
+echo baue($vs2);
 ?>

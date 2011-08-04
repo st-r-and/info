@@ -1,7 +1,7 @@
   $(document).ready(function() {
       $("#fah").load("fahrten.php");
       var refreshId = setInterval(function() {
-          $("#fah").load('fahrten.php');
+          $("#fah").load('fahrten.php?' + 1*new Date());
 	}, 1000);
     });
 
@@ -15,7 +15,7 @@
   $(document).ready(function() {
       $("#pwe").load("showpog.php");
       var refreshId = setInterval(function() {
-          $("#pwe").load('showpog.php');
+          $("#pwe").load('showpog.php?' + 1*new Date());
 	}, 1000);
     });
   $(document).ready(function() {
@@ -28,7 +28,7 @@
   $(document).ready(function() {
       $("#vssh").load("showvs.php");
       var refreshId = setInterval(function() {
-          $("#vssh").load('showvs.php');
+          $("#vssh").load('showvs.php?' + 1*new Date());
 	}, 1000);
     });
   $(document).ready(function() {

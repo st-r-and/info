@@ -7,7 +7,17 @@
 <script type="text/javascript" src="./admin/jquery.js"></script>
 <script type="text/javascript" src="./basic.js"></script>
 <script type="text/javascript" src="./load.js"></script>
+
+<!--[if IE 6]>
+    <script type="text/javascript">
+   $(document).ready(function() {
+       $('#close-button').remove();
+     });
+    </script>
+    <![endif]-->
+
 </head>
+
 <body onload="start();">
 <div id="inf">
 <h1 class="box">Halleninformation</h1>
@@ -15,7 +25,9 @@
 <div id="uhr"><h1 id="time"></h1></div>
 <div id="pro">
 <div id="pwe"></div>
+
 <img id="pdi" src='durchsdia.php' alt='' />
+
 </div>
 <div id="fah"></div>
 <img id="fahdia" src='fahrtdia.php' alt=' ' />
@@ -28,6 +40,7 @@
   <img id="vs3dia" src='vs3dia.php' alt=' ' />
   <img id="vs4dia" src='vs4dia.php' alt=' ' />
   <img id="vs5dia" src='vs5dia.php' alt=' ' />
+
 </div>
 </body>
 </head>
