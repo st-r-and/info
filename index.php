@@ -1,116 +1,43 @@
-<?php
-require_once "admin/daten.php";
-if ($lesen = $datab->prepare("SELECT eingang, abgang FROM prognose WHERE id=1")) {
-  $lesen->execute();
-  $lesen->bind_result($eingang, $abgang);
-  $lesen->fetch();
-  $lesen->close();
-}
-if ($lesen = $datab->prepare("SELECT gesammt, gekommen FROM fahrten WHERE id=1")) {
-  $lesen->execute();
-  $lesen->bind_result($gesammt, $gekommen);
-  $lesen->fetch();
-  $lesen->close();
-}
-if ($lesen = $datab->prepare("SELECT vs1, vs2, vs3, vs4, vs5 FROM stoerung WHERE id=1")) {
-  $lesen->execute();
-  $lesen->bind_result($vs1, $vs2, $vs3, $vs4, $vs5);
-  $lesen->fetch();
-  $lesen->close();
-}
-?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
 <head>
-<meta http-equiv="refresh" content="5; URL=index.php">
+<meta http-equiv="refresh" content="300; URL=index.php">
 <title>Info-Front</title>
-<style type="text/css">
-  body { background-color:#FFCC66;}
-div { border:0px solid #888; }
-#inf { position:absolute; width:29%; height:19%; left:30%; top:20%; }
-#uhr { position:absolute; width:29%; height:20%; left:30%; top:0px; text-align:center; font-size:200%; }
-#pro { position:absolute; width:30%; height:39%; right:0px; top:0px; }
-#fah { position:absolute; width:20%; height:99%; left:35px; top:0px; }
-#sto { position:absolute; width:79%; height:60%; right:0px; bottom:0px; text-align:center;}
-#vs1 { position:absolute; bottom:0px; height:80%; width:20%; left:0%;}
-#vs2 { position:absolute; bottom:0px; height:80%; width:20%; left:20%;}
-#vs3 { position:absolute; bottom:0px; height:80%; width:20%; left:40%;}
-#vs4 { position:absolute; bottom:0px; height:80%; width:20%; left:60%;}
-#vs5 { position:absolute; bottom:0px; height:80%; width:20%; left:80%;}
-.box { text-align:center; font-size:220%; }
-.bez { font-size:200%; }
-.wert { font-size:400%; text-align:right;}
-</style>
-<script type="text/javascript">
-<!--
-  function start() {
-  time();
-  window.setInterval("time()", 1000);
-}
+<link rel="stylesheet" type="text/css" href="./style.css" />
+<script type="text/javascript" src="./admin/jquery.js"></script>
+<script type="text/javascript" src="./basic.js"></script>
+<script type="text/javascript" src="./load.js"></script>
 
-function time() {
-  var now = new Date();
-  hours = now.getHours();
-  minutes = now.getMinutes();
-  seconds = now.getSeconds();
-
-  thetime = (hours < 10) ? "0" + hours + ":" : hours + ":";
-  thetime += (minutes < 10) ? "0" + minutes + ":" : minutes + ":";
-  thetime += (seconds < 10) ? "0" + seconds : seconds;
-
-  element = document.getElementById("time");
-  element.innerHTML = thetime;
-}
-
-$(document).ready(function() {
-    $("#fah").load("farten.php");
-    var refresId = setInterval(function() {
-	$("#fah").load('farten.php');
-      }, 1000);
-  });
-
-
-//-->
-</script>
+<!--[if IE 6]>
+    <script type="text/javascript">
+   $(document).ready(function() {
+       $('#close-button').remove();
+     });
+    </script>
+    <![endif]-->
 </head>
+
 <body onload="start();">
 <div id="inf">
 <h1 class="box">Halleninformation</h1>
 </div>
-<div id="uhr">
-<h1 id="time"></h1>
-</div>
+<div id="uhr"><h1 id="time"></h1></div>
 <div id="pro">
-<h2 class="box">Prognose</h2>
-<table>
-  <tr><td class="bez">Abgang: </td><td class="wert"><?php echo htmlspecialchars($abgang); ?></td></tr>
-  <tr><td class="bez">Eingang: </td><td class="wert"><?php echo htmlspecialchars($eingang); ?></td></tr>
-</table>
+<div id="pwe"></div>
+<img id="pdi" src='durchsdia.php' alt='' />
 </div>
-<div id="fah">
-</div>
+<div id="fah"></div>
+<img id="fahdia" src='fahrtdia.php' alt=' ' />
+
 <div id="sto">
-  <h2 class="box">Vorsorterst&oumlrung</h2>
-<div id="vs1"><span class="bez">VS 1</span><br/>
-  <span class="wert"> <?php echo htmlspecialchars($vs1); ?> </span><br />
-  <img src='vs1dia.php' alt=' ' />
-</div>
-<div id="vs2"><span class="bez">VS 2</span><br/>
-  <span class="wert"> <?php echo htmlspecialchars($vs2); ?> </span><br />
-  <img src='vs2dia.php' alt=' ' />
-</div>
-<div id="vs3"><span class="bez">VS 3</span><br/>
-  <span class="wert"> <?php echo htmlspecialchars($vs3); ?> </span><br />
-  <img src='vs3dia.php' alt=' ' />
-</div>
-<div id="vs4"><span class="bez">VS 4</span><br/>
-  <span class="wert"> <?php echo htmlspecialchars($vs4); ?> </span><br />
-  <img src='vs4dia.php' alt=' ' />
-</div>
-<div id="vs5"><span class="bez">VS 5</span><br/>
-  <span class="wert"> <?php echo htmlspecialchars($vs5); ?> </span><br />
-  <img src='vs5dia.php' alt=' ' />
-</div>
+<h2 class="box">Vorsorterst&oumlrung</h2>
+<div id="vssh"></div>
+  <img id="vs1dia" src='vs1dia.php' alt=' ' />
+  <img id="vs2dia" src='vs2dia.php' alt=' ' />
+  <img id="vs3dia" src='vs3dia.php' alt=' ' />
+  <img id="vs4dia" src='vs4dia.php' alt=' ' />
+  <img id="vs5dia" src='vs5dia.php' alt=' ' />
+
 </div>
 </body>
 </head>

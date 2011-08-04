@@ -12,11 +12,9 @@
   if($vs3 > $max) $max = $vs3;
   if($vs4 > $max) $max = $vs4;
   if($vs5 > $max) $max = $vs5;
-  $prozent = 100 / $max * $vs1;
   $hoehe = 365;
   $breite = 100;
   $rand = 25;
-  $aussl = ( $hoehe - 2 * $rand ) / 100 * $prozent;
   $bild = imagecreatetruecolor($breite, $hoehe);
   $farbe_hintergrund = imagecolorexact($bild, 255, 204, 102);
   $lime = imagecolorallocate($bild, 0x00, 0xFF, 0x00);
@@ -24,8 +22,13 @@
   imagefill($bild, 0, 0, $farbe_hintergrund);
   $black = imagecolorallocate($bild, 0,   0,   0);
   $red   = imagecolorallocate($bild, 255,   0,   0);
+if ($max > 0) {
+  $prozent = 100 / $max * $vs1;
+  $aussl = ( $hoehe - 2 * $rand ) / 100 * $prozent;
   imagefilledrectangle($bild, $rand, $hoehe - $rand - $aussl, $breite - $rand, $hoehe - $rand, $red);
   imagerectangle($bild, $rand, $rand, $breite - $rand, $hoehe -$rand, $black);
+}
   imagegif($bild);
   imagedestroy($bild);
+$datab->close();
 ?>

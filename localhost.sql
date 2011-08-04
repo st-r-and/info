@@ -86,3 +86,25 @@ CREATE TABLE IF NOT EXISTS `stoerung` (
 
 INSERT INTO `stoerung` (`id`, `datum`, `vs1`, `vs2`, `vs3`, `vs4`, `vs5`) VALUES
 (1, '0000-00-00', 4, 3, 6, 2, 0);
+
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `durchsatz`
+--
+
+CREATE TABLE IF NOT EXISTS `durchsatz` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `datum` date DEFAULT '0000-00-00',
+  `time` time DEFAULT '00:00:00',
+  `bearbeitete` int(11) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Daten für Tabelle `durchsatz`
+--
+
+INSERT INTO `durchsatz` (`id`, `datum`, `time`, `bearbeitete`) VALUES
+(1, '0000-00-00', '00:00:00', 0);

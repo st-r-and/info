@@ -6,15 +6,25 @@
     $lesen->fetch();
     $lesen->close();
   }
-  $prozent = 100 / htmlspecialchars($gesammt) * htmlspecialchars($gekommen);
-  $winkel = 360 / 100 * $prozent;
+function farbverl($grad){
+  $far = 255/100 * $grad;
+  $code = array(255-$far,$far,0);
+  return $code;
+}
+
   header("Content-type: image/gif");
   $gro = 400;
   $bild = imagecreatetruecolor($gro, $gro);
   $farbe_hintergrund = imagecolorexact($bild, 255, 204, 102);
   imagefill($bild, 0, 0, $farbe_hintergrund);
-  $red   = imagecolorallocate($bild, 255,   0,   0);
-if ($winkel > 0 && $gesammt > 0) imagefilledarc($bild, $gro/2, $gro/2, $gro-10, $gro-10,  180, 180 + $winkel, $red, IMG_ARC_PIE);
+if ($gekommen > 0 && $gesammt > 0){ 
+  $prozent = 100 / htmlspecialchars($gesammt) * htmlspecialchars($gekommen);
+  $farb=farbverl($prozent);
+  $red   = imagecolorallocate($bild, $farb[0],   $farb[1],   $farb[2]);
+  $winkel = 360 / 100 * $prozent;
+  imagefilledarc($bild, $gro/2, $gro/2, $gro-10, $gro-10,  180, 180 + $winkel, $red, IMG_ARC_PIE);
+}
   imagegif($bild);
   imagedestroy($bild);
+$datab->close();
 ?>
