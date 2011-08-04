@@ -20,7 +20,13 @@ require_once "admin/daten.php";
   $black = imagecolorallocate($bild, 0,   0,   0);
   $red   = imagecolorallocate($bild, 255,   0,   0);
 function baue($vs){
+  global $max, $hoehe, $rand, $bild, $breite, $black, $red;
     $prozent = 100 / $max * $vs;
-    return ( $hoehe - 2 * $rand ) / 100 * $prozent;
+  $aussl = ( $hoehe - 2 * $rand ) / 100 * $prozent;
+if ($max > 0){
+  imagefilledrectangle($bild, $rand, $hoehe - $rand - $aussl, $breite - $rand, $hoehe - $rand, $red);
+  imagerectangle($bild, $rand, $rand, $breite - $rand, $hoehe -$rand, $black);
+}
+
 }
 ?>
