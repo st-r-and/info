@@ -62,6 +62,14 @@ function time() {
   element.innerHTML = thetime;
 }
 
+$(document).ready(function() {
+    $("#fah").load("farten.php");
+    var refresId = setInterval(function() {
+	$("#fah").load('farten.php');
+      }, 1000);
+  });
+
+
 //-->
 </script>
 </head>
@@ -80,13 +88,6 @@ function time() {
 </table>
 </div>
 <div id="fah">
-<h2 class="box">Fahrten</h2>
-<table>
-  <tr><td class="bez">Gesamt: </td><td class="wert"><?php echo htmlspecialchars($gesammt); ?></td></tr>
-  <tr><td class="bez">Gekommen: </td><td class="wert"><?php echo htmlspecialchars($gekommen); ?></td></tr>
-</table>
-<br />
-<img src='fahrtdia.php' alt=' ' />
 </div>
 <div id="sto">
   <h2 class="box">Vorsorterst&oumlrung</h2>
