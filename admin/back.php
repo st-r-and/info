@@ -38,7 +38,7 @@ if (isset($_POST["eingang"]) || isset($_POST["abgang"]) || isset($_POST["gesammt
   if(isset($_POST["gesammt"]) || isset($_POST["gekommen"])){
     if($schr = $datab->prepare("UPDATE fahrten SET gesammt=?, gekommen=? WHERE id=1")) {
       $ges = $_POST["gesammt"];
-      $gek = $_POST["gekommen"];
+      $gek = $ges - $_POST["fehlende"];
       $schr->bind_param("ii", $ges, $gek);
       $schr->execute();
       $schr->close();
@@ -137,7 +137,7 @@ Sendungen</h2>
 aktuelle Schicht<br />
 <table>
 <tr><td><h3>Sollfahrten</h3></td><td><input type="text" name="gesammt" size="3" value="<?php echo htmlspecialchars($gesammt) ?>" /></td></tr>
-<tr><td><h3>Istfahrten</h3></td><td><input type="text" name="gekommen" size="3" value="<?php echo htmlspecialchars($gekommen) ?>" /></td></tr>
+<tr><td><h3>fehlende Fahrten</h3></td><td><input type="text" name="fehlende" size="3" value="<?php echo htmlspecialchars($gesammt-$gekommen) ?>" /></td></tr>
 </table>
 </div>
 <div id="sto">
