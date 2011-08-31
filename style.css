@@ -1,12 +1,12 @@
   body { background-color:#FFF;}
 div { border:1px solid #888; }
 #inf { position:absolute; width:29%; height:19%; left:30%; top:20%; }
-#uhr { position:absolute; width:400px; height:160px; left:30%; top:100px; text-align:center; font-size:150%; }
+#uhr { position:absolute; width:20%; height:130px; left:35px; top:10px; text-align:center; font-size:150%; }
 #pro { position:absolute; width:40%; height:39%; right:0px; top:0px; }
 #pwe { position:absolute; width:80%; height:100%; right:0%; }
 #pdi { position:absolute; right:82%; top:10px }
-#fah { position:absolute; width:20%; height:40%; left:35px; top:0%; }
-#fahdia { position:absolute; left:35px; top:30%;}
+#fah { position:absolute; width:20%; height:40%; left:35px; top:140px; }
+#fahdia { position:absolute; left:35px; top:40%;}
 #sto { position:absolute; width:40%; height:60%; right:0px; bottom:0px; text-align:center;}
 #vs1 { position:absolute; top:20%; height:20%; width:20%; right:80%;}
 #vs2 { position:absolute; top:20%; height:20%; width:20%; right:60%;}

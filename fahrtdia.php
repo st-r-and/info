@@ -13,7 +13,7 @@ function farbverl($grad){
 }
 
   header("Content-type: image/gif");
-  $gro = 400;
+  $gro = 330;
   $bild = imagecreatetruecolor($gro, $gro);
   $farbe_hintergrund = imagecolorexact($bild, 255, 255, 255);
   imagefill($bild, 0, 0, $farbe_hintergrund);
@@ -22,7 +22,7 @@ if ($gekommen > 0 && $gesammt > 0){
   $farb=farbverl($prozent);
   $red   = imagecolorallocate($bild, $farb[0],   $farb[1],   $farb[2]);
   $winkel = 360 / 100 * $prozent;
-  imagefilledarc($bild, $gro/2, $gro/2, $gro-10, $gro-10,  180, 180 + $winkel, $red, IMG_ARC_PIE);
+  imagefilledarc($bild, $gro/2, $gro/2, $gro, $gro,  180, 180 + $winkel, $red, IMG_ARC_PIE);
 }
   imagegif($bild);
   imagedestroy($bild);
