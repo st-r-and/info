@@ -1,0 +1,32 @@
+<?php
+error_reporting(E_ALL ^ E_NOTICE);
+require_once 'excel_reader2.php';
+
+echo "Hallo Datei hochladen";
+?>
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" 
+enctype="multipart/form-data">
+Datei: <br />
+<input type="hidden" name="MAX_FILE_SIZE" value="500000" />
+<input type="file" name="datei" /><br />
+<input type="submit" value="Hochladen" />
+</form>
+<?php
+if (isset($_FILES["datei"])) {
+  foreach ($_FILES["datei"] as $k => $v) {
+    echo "$k: $v <br />\n";
+  }
+}
+
+if (isset($_FILES["datei"]) AND ! $_FILES["datei"]["error"]){
+  $data = new Spreadsheet_Excel_Reader($_FILES["datei"]["tmp_name"]);
+  $filename = basename($_FILES["datei"]["name"]);
+  $filename = preg_replace('/\s+/', '_', $filename);
+  if (move_uploaded_file($_FILES["datei"]["tmp_name"], "upload/".
+			  $filename )){
+    echo "Dateiupload hat geklappt";
+  } else {
+    echo "Dateiupload hat nicht geklappt";
+  }
+}
+?>
