@@ -18,9 +18,6 @@
 </head>
 
 <body onload="start();">
-<div id="inf">
-<h1 class="box">Halleninformation</h1>
-</div>
 <div id="uhr"><h1 id="time"></h1></div>
 <div id="pro">
 <div id="pwe"></div>

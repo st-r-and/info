@@ -15,7 +15,7 @@ function farbverl($grad){
   header("Content-type: image/gif");
   $gro = 400;
   $bild = imagecreatetruecolor($gro, $gro);
-  $farbe_hintergrund = imagecolorexact($bild, 255, 204, 102);
+  $farbe_hintergrund = imagecolorexact($bild, 255, 255, 255);
   imagefill($bild, 0, 0, $farbe_hintergrund);
 if ($gekommen > 0 && $gesammt > 0){ 
   $prozent = 100 / htmlspecialchars($gesammt) * htmlspecialchars($gekommen);

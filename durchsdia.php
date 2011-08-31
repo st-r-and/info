@@ -31,7 +31,7 @@ $bproz = 100 / $max * $bearb;
 $paus = ($hoehe - 2 * $rand ) / 100 * $pproz;
 $baus = ($hoehe - 2 * $rand ) / 100 * $bproz;
   $bild = imagecreatetruecolor($breite, $hoehe);
-  $farbe_hintergrund = imagecolorexact($bild, 255, 204, 102);
+  $farbe_hintergrund = imagecolorexact($bild, 255, 255, 255);
   imagefill($bild, 0, 0, $farbe_hintergrund);
   $black = imagecolorallocate($bild, 0,   0,   0);
   $red   = imagecolorallocate($bild, 255,   0,   0);

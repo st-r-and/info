@@ -15,7 +15,7 @@ require_once "admin/daten.php";
   $breite = 100;
   $rand = 25;
   $bild = imagecreatetruecolor($breite, $hoehe);
-  $farbe_hintergrund = imagecolorexact($bild, 255, 204, 102);
+  $farbe_hintergrund = imagecolorexact($bild, 255, 255, 255);
   imagefill($bild, 0, 0, $farbe_hintergrund);
   $black = imagecolorallocate($bild, 0,   0,   0);
   $red   = imagecolorallocate($bild, 255,   0,   0);
