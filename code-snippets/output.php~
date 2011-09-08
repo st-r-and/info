@@ -1,0 +1,15 @@
+<?php
+$datab = new mysqli("localhost", "webuser", "web4all", "test");
+
+?>
+<html>
+<head>
+<title>Zeitstempel testen</title>
+</head>
+<body>
+</body>
+</html>
+<?php
+
+$datab->close();
+?>
