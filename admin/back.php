@@ -163,7 +163,6 @@ aktuelle Schicht<br />
 </div>
 </form>
 </body>
-</head>
 <?php
 }
 $datab->close();
