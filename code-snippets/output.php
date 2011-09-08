@@ -7,6 +7,7 @@ $datab = new mysqli("localhost", "webuser", "web4all", "test");
 </head>
 <body>
 <?php
+ /*
 if ($lesen = $datab->prepare("SELECT stempel, wert FROM zeit ORDER BY stempel DESC")) {
   $lesen->execute();
   $lesen->bind_result($stempel, $wert);
@@ -21,6 +22,17 @@ if ($lesen = $datab->prepare("SELECT stempel, wert FROM zeit ORDER BY stempel DE
   echo "</table>";
   $lesen->close();
 }
+*/
+if ($lesen = $datab->prepare("SELECT stempel, wert FROM zeit ORDER BY stempel DESC LIMIT 1")) {
+  $lesen->execute();
+  $lesen->bind_result($stempel, $wert);
+  $lesen->fetch();
+  $lesen->close();
+}
+
+echo $stempel . "<br />";
+echo strlen($stempel);
+
 ?>
 </body>
 </html>
