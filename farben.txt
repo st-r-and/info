@@ -1,0 +1,6 @@
+#FFFFFF, weiß
+#FFCC00, gelb
+#CC0000, rot
+#000000, schwarz
+#D1D1D1, hellgrau
+#666666  grau
